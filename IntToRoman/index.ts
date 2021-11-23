@@ -26,6 +26,10 @@ const chars: Array<IChar> = [
 const intToRoman = (num: number): string => {
   let output: string = "";
 
+  if(num === 0) {
+    throw new Error("You cannot use 0 value as a parameter")
+  }
+
   if(typeof num !== "number") {
     throw new Error("Parameter must be a number")
   }
