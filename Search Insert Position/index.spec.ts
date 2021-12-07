@@ -1,19 +1,16 @@
-import intToRoman from "./index";
+import searchInsertPosition from './index';
 
-describe("intToRoman", () => {
-  it("converts 3 to III", () => {
-    expect(intToRoman(3)).toEqual("III");
+describe('searchInsertPosition', () => {
+  it('finds target for 6', () => {
+    expect(searchInsertPosition([1, 3, 5, 6, 8, 9, 22, 78, 99], 6)).toEqual(3);
   });
-  it("converts 550 to DL", () => {
-    expect(intToRoman(550)).toEqual("DL");
+  it('finds target for 0', () => {
+    expect(searchInsertPosition([1, 3, 5, 6], 0)).toEqual(0);
   });
-  it("converts 2020 to MMXX", () => {
-    expect(intToRoman(2020)).toEqual("MMXX");
+  it('finds target for 4', () => {
+    expect(searchInsertPosition([1, 3, 5, 6], 4)).toEqual(2);
   });
-  it("returns an error after passing a string", () => {
-    expect(() => intToRoman('Hi')).toThrow("Parameter must be a number");
-  });
-  it("returns an error after passing a 0", () => {
-    expect(() => intToRoman(0)).toThrow("You cannot use 0 value as a parameter");
+  it('finds target for 22', () => {
+    expect(searchInsertPosition([1, 3, 5, 6], 22)).toEqual(4);
   });
 });
